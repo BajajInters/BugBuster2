@@ -1,0 +1,51 @@
+<section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card shadow-2-strong" style="border-radius: 1rem">
+          <div class="card-body p-15 text-left">
+    <h1 class="text-center my-2">Create User</h1>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="row g-3 mt-2">
+      <div class="col-md-6">
+        <label for="firstname" class="form-label">First Name</label>
+        <input type="firstname" class="form-control" id="firstname" formControlName="firstname"/>
+      </div>
+      <div class="col-md-6">
+        <label for="lastname" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lastname" formControlName="lastname"/>
+      </div>
+      <div class="col-12">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" formControlName="username"/>
+      </div>
+      <div class="col-12">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" formControlName="email"/>
+      </div>
+      <div class="col-md-6">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" formControlName="password"/>
+      </div>
+      <div class="col-md-6">
+        <label for="confirmpassword" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" id="confirmpassword" formControlName="confirmpassword"/>
+      </div>
+      <div class="col-md-6">
+        <label for="usertype" class="form-label">Role</label>
+        <select class="form-select" id="usertype" formControlName="usertype">
+          <option value="General_User" selected>General User</option>
+          <option value="Admin">Admin</option>
+          <option value="QA_Tester">QA Tester</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label for="mobile" class="form-label">Mobile Number</label>
+        <input type="text" class="form-control" id="mobile" formControlName="mobile"/>
+      </div>
+
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary w-100 mt-5">Create</button>
+      </div>
+    </form>
+  </div>
+</div>

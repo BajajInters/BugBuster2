@@ -1,0 +1,69 @@
+<header class="bg-surface-primary border-bottom pt-6">
+  <div class="container-fluid">
+      <div class="mb-npx">
+          <div class="row align-items-center">
+              <div class="col-sm-6 col-12 mb-4 mb-sm-0">
+                  <!-- Title -->
+                  <h1 class="h2 mb-0 ls-tight">Application</h1>
+              </div> <!-- Actions -->
+              <div class="col-sm-6 col-12 text-sm-end">
+                <div class="mx-n1"><a href="#" class="btn d-inline-flex btn-sm btn-primary mx-1"> <span class=" pe-2"> <i class="bi bi-person-circle"></i> </span> <span>Admin</span> </a> </div>
+              </div>
+          </div> <!-- Nav -->
+          <div class="nav nav-tabs mt-4 overflow-x border-0">
+          </div>
+      </div>
+  </div>
+</header> <!-- Main -->
+
+<table class="table table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>Creator</th>
+      <th>Module Name</th>
+      <th>Bug Title</th>
+      <!-- <th>Bug Details</th> -->
+      <th>Device Details</th>
+      <!-- <th>Image/Video</th> -->
+      <th>Status</th>
+      <th>Created At</th>
+      <th>Updated At</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+    <tr *ngFor="let bug of bugReports | paginate: { itemsPerPage: 8, currentPage: currentPage }" routerLink="/bug-list/{{ bug._id }}">
+      <td> <img alt="..." src="https://banner2.cleanpng.com/20180401/dbq/kisspng-user-profile-computer-icons-profile-5ac09245049c32.0935523415225697970189.jpg" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> John Doe </a> </td>
+      <td>{{ bug.moduleName }}</td>
+      <td>{{ bug.bugTitle }}</td>
+      <!-- <td>{{ bug.bugDetails }}</td> -->
+      <td>{{ bug.deviceDetails }}</td>
+      <!-- <td class="text-center">
+        <div *ngIf="bug.imageOrVideo && bug.imageOrVideo.length > 0">
+          <img *ngFor="let image of bug.imageOrVideo" [src]="'data:image/png;base64,' + image" alt="bug image" class="bug-image" width="100px"/>
+        </div>
+      </td> -->
+      <td><span class="badge badge-lg badge-dot"> <i class="bg-success"></i>open</span> </td>
+      <td>{{ bug.createdAt | date }}</td>
+      <td>{{ bug.updatedAt | date }}</td>
+    </tr>
+  </tbody>
+
+  <ul class="pagination mt-2">
+    <li class="page-item" [class.disabled]="currentPage == 1">
+      <a class="page-link" (click)="currentPage = 1">&laquo;</a>
+    </li>
+    <li class="page-item" [class.disabled]="currentPage == 1">
+      <a class="page-link" (click)="currentPage = currentPage - 1">&lsaquo;</a>
+    </li>
+    <li class="page-item" *ngFor="let page of getPages()" [class.active]="currentPage == page">
+      <a class="page-link"  (click)="currentPage = page">{{ page }}</a>
+    </li>
+    <li class="page-item" [class.disabled]="currentPage == totalPages()">
+      <a class="page-link" (click)="currentPage = currentPage + 1">&rsaquo;</a>
+    </li>
+    <li class="page-item" [class.disabled]="currentPage == totalPages()">
+      <a class="page-link" (click)="currentPage = totalPages()">&raquo;</a>
+    </li>
+  </ul>
+  
+</table>

@@ -1,0 +1,40 @@
+.mx-2 {
+  margin: 5px;
+}
+/* .container {
+  background-color: rgb(131, 164, 192);
+}
+
+.card {
+  background-color: rgb(186, 74, 25);
+} */
+
+.bug-title-container {
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 2px;
+  padding-left: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.bug-title {
+  color: black;
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+
+:host {
+  font-size: 16px; /* set your desired font size here */
+}
+
+h2, p, textarea {
+  font-size: inherit;
+}
+
+i.bi {
+  margin-right: 15px;
+}
+

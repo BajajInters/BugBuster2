@@ -1,0 +1,58 @@
+<div class="container">
+  <div *ngIf="bug">
+    <div class="bug-title-container">
+    <h2 class="title-bg"><i class="bi bi-check-circle"></i> <strong>{{ bug.bugTitle }}</strong></h2>
+  </div>
+    <!-- <h2><i class="bi bi-bug"></i> {{ bug.bugTitle }}</h2> -->
+    <p><i class="bi bi-folder"></i> <strong>Module Name : </strong> {{ bug.moduleName }}</p>
+    <p><i class="bi bi-file-earmark-text"></i> <strong>Bug Details : </strong> {{ bug.bugDetails }}</p>
+    <p><i class="bi bi-laptop"></i> <strong>Device Details : </strong> {{ bug.deviceDetails }}</p>
+    <p><i class="bi bi-folder"></i> <strong>Bug ID:</strong> {{ bug._id }}</p>
+    <p><i class="bi bi-image"></i> <strong>Image/Video : </strong></p>
+    <div class="row">
+      <!-- <div class="col-md-4">
+        <img src="data:image/png;base64,{{ bug.imageOrVideo }}" alt="Bug Screenshot" width="200px">
+      </div> -->
+      <!-- <div *ngFor="let image of bug.imageOrVideo" class="col-md-4">
+        <img src="data:image/png;base64,{{ image }}" alt="Bug Screenshot" width="200px">
+      </div> -->
+      <div class="col-md-4">
+        <img src="https://ds6br8f5qp1u2.cloudfront.net/blog/wp-content/uploads/2016/05/bugzilla-open-source-bug-tracking-tools.jpg?x82505" alt="Bug Screenshot">
+      </div>
+      
+      <div class="col-md-4">
+        <img src="https://ds6br8f5qp1u2.cloudfront.net/blog/wp-content/uploads/2016/05/webissues-open-source-bt.jpg?x82505" alt="Dummy Image" class="img-thumbnail">
+      </div>
+      <div class="col-md-4">
+        <img src="https://ds6br8f5qp1u2.cloudfront.net/blog/wp-content/uploads/2022/09/Website-Issue-Tracking-and-Bug-Reporting-Usersnap.png?x82505" alt="Dummy Image" class="img-thumbnail">
+      </div>
+    </div>
+  </div>
+  <div class="mt-5">
+  <h2 class="text-primary" style="color: rgb(12, 32, 49); text-align: left;"><i class="bi bi-chat-left"></i> Add Comment</h2>
+  <div class="row">
+    <div class="row">
+      <div class="col-md-8">
+        <textarea rows="5" cols="50" [(ngModel)]="comment" class="form-control" [disabled]="!isCommentSectionVisible"></textarea>
+        <br>
+        <button (click)="post()" class="btn btn-primary" [disabled]="!isCommentSectionVisible"><i class="bi bi-chat-right"></i> Comment</button>
+        <hr>
+        <h2 style="text-align: left;"><i class="bi bi-chat-dots-fill"></i> Comments</h2>
+        <div *ngFor="let c of comments" class="card mt-3" [hidden]="!isCommentSectionVisible">
+          <div class="card-body">
+            <p><i class="bi bi-chat-left"></i> {{ c }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row mt-3">
+          <div class="col">
+            <button type="button" class="btn btn-success mx-2" (click)="onOpenClick()" [disabled]="isCommentSectionVisible"><i class="bi bi-play-fill"></i> Open</button>
+            <button type="button" class="btn btn-primary mx-2" (click)="onCloseClick()" [disabled]="!isCommentSectionVisible"><i class="bi bi-check-circle-fill"></i> Close</button>
+            <button type="button" class="btn btn-danger mx-2" (click)="onRetestClick()" [disabled]="isCommentSectionVisible"><i class="bi bi-arrow-repeat"></i> Retest</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{ bug.moduleName }} - {{ bug.bugTitle }}</h5>
+    <p class="card-text">{{ bug.bugDetails }}</p>
+    <p class="card-text">{{ bug.deviceDetails }}</p>
+    <div *ngIf="bug.imageOrVideo">
+      <img src="data:image/png;base64,{{ bug.imageOrVideo }}" alt="Bug Screenshot" width="100px" height="100px">
+    </div>
+    <p class="card-text">Created By: {{ bug.creator }}</p>
+    <p class="card-text">Status: {{ bug.status }}</p>
+    <p class="card-text"><small class="text-muted">Created {{ bug.createdAt | date:'medium' }}</small></p>
+    <p class="card-text"><small class="text-muted">Last Updated {{ bug.updatedAt | date:'medium' }}</small></p>
+  </div>
+</div>

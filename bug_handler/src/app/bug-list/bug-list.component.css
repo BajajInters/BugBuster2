@@ -1,0 +1,38 @@
+.bug-image {
+  width: 100px;
+  height: 100px;
+}
+
+tr:hover {
+  cursor: pointer;
+}
+
+.pagination {
+  display: inline-block;
+  margin: 0;
+}
+
+.pagination li {
+  display: inline-block;
+}
+
+.pagination li a {
+  border: none;
+}
+
+.pagination li.active a {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.pagination li.disabled a {
+  color: #6c757d;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.pagination li a:hover {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+}

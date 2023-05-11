@@ -1,0 +1,57 @@
+/* Center the form */
+form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+button {
+  width: 80%;
+  margin: 10px 0;
+}
+button{
+  margin-top: 20px;
+}
+
+/* Style the file input container */
+.file-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  cursor: pointer;
+}
+
+.file-input:hover {
+  background-color: #fafafa;
+}
+
+.file-input mat-icon {
+  margin-right: 10px;
+}
+
+.file-input span {
+  flex: 1;
+  text-align: center;
+}
+
+.form-control {
+  border-color: #a8a7a7; /* Change to the desired color */
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
